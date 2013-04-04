@@ -1,0 +1,26 @@
+<table class="table table-hover table-striped">
+  <tr>
+  	<th>Id</th>
+  	<th>Name</th>
+    <th>Price</th>
+    <th>On Sale</th>
+  </tr>
+  <% @rs.each do |row| %>
+  <tr>
+  	<td><%= row['id'] %></td>
+  	<td><%= row['name'] %></td>
+    <td><%= row['price'] %></td>
+    <td>
+      <% if row['on_sale'] == 't' %>
+      <img src="sale.gif" height="50" width="50">
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<div class="buttons">
+
+  <a href="/"><button class="btn" type="button">Back</button></a>
+  
+</div>
